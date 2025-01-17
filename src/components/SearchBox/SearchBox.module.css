@@ -1,0 +1,15 @@
+.thumb {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
+
+.input {
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+
