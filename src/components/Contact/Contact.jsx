@@ -1,7 +1,14 @@
 import { HiUser, HiPhone } from 'react-icons/hi2';
 import css from './Contact.module.css';
+import { useDispatch } from 'react-redux';
 
-const Contact = ({ name, number, id, handleDelete }) => {
+const Contact = ({ name, number, id }) => {
+  const dispatch = useDispatch();
+
+  const handleDelete = id => {
+    dispatch({ type: 'deleteContact', payload: id });
+  };
+
   return (
     <>
       <li className={css.listItem}>

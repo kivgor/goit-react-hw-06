@@ -1,12 +1,21 @@
-import css from './SearchBox.module.css'
+import css from './SearchBox.module.css';
+import { useDispatch } from 'react-redux';
 
-const SearchBox = ({ inputName, handleSearch }) => {
+const SearchBox = () => {
+  const dispatch = useDispatch();
+
+  const handleSearch = evt => {
+    // console.log(evt.target.value);
+
+    dispatch({ type: 'changeFilter', payload: evt.target.value });
+  };
+
   return (
     <div className={css.thumb}>
       <label>
         Find contact by name
         <input
-          value={inputName}
+          // value={inputName}
           className={css.input}
           type="text"
           onChange={handleSearch}
