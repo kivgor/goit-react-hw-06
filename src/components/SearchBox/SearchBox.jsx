@@ -5,8 +5,6 @@ const SearchBox = () => {
   const dispatch = useDispatch();
 
   const handleSearch = evt => {
-    // console.log(evt.target.value);
-
     dispatch({ type: 'changeFilter', payload: evt.target.value });
   };
 
