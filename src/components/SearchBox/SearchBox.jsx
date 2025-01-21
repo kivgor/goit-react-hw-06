@@ -1,7 +1,10 @@
 import css from './SearchBox.module.css';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 const SearchBox = () => {
+  const statusFilter = useSelector(state => state.contacts.filters.name);
+  // console.log(statusFilter);
+
   const dispatch = useDispatch();
 
   const handleSearch = evt => {
@@ -13,7 +16,7 @@ const SearchBox = () => {
       <label>
         Find contact by name
         <input
-          // value={inputName}
+          value={statusFilter}
           className={css.input}
           type="text"
           onChange={handleSearch}

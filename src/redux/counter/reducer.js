@@ -30,7 +30,8 @@ export const contactReducer = (state = initialState, action) => {
     case 'changeFilter': {
       return {
         ...state,
-        filters: action.payload,
+        // filters: action.payload,
+        filters: { name: action.payload },
       };
     }
     default:
