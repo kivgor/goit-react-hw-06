@@ -1,14 +1,13 @@
+import { changeFilter } from '../../redux/actions';
 import css from './SearchBox.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 
 const SearchBox = () => {
-  const statusFilter = useSelector(state => state.contacts.filters.name);
-  // console.log(statusFilter);
-
+  const statusFilter = useSelector(state => state.phonebook.filters.name);
   const dispatch = useDispatch();
 
   const handleSearch = evt => {
-    dispatch({ type: 'changeFilter', payload: evt.target.value });
+    dispatch(changeFilter(evt.target.value));
   };
 
   return (

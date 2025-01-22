@@ -3,23 +3,16 @@ import css from './ContactList.module.css';
 import { useSelector } from 'react-redux';
 
 const ContactList = () => {
-  const phonebook = useSelector(state => state.contacts.contacts.items);
-  const statusFilter = useSelector(state => state.contacts.filters.name);
-  const getVisibleContacts = (phonebook, statusFilter) => {
-    // console.log(statusFilter);
+  const phonebook = useSelector(state => state.phonebook.contacts.items);
+  const statusFilter = useSelector(state => state.phonebook.filters.name);
 
+  const getVisibleContacts = (phonebook, statusFilter) => {
     const newPhonebook = phonebook.filter(contact =>
       contact.name
         .toLowerCase()
         .trim()
         .includes(statusFilter.toLowerCase().trim())
     );
-
-    // const newPhonebook = phonebook.filter(
-    //   contact => contact.name.toLowerCase().trim().includes(statusFilter)
-    //   // .includes(statusFilter.toLowerCase().trim())
-    // );
-
     return newPhonebook;
   };
 

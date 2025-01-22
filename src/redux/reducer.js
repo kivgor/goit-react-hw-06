@@ -1,4 +1,5 @@
-import initPhonebook from '../../initialList.json';
+import initPhonebook from '../initialList.json';
+import { addContact, changeFilter, deleteContact } from './actions';
 
 const initialState = {
   contacts: {
@@ -9,7 +10,7 @@ const initialState = {
 
 export const contactReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'addContact': {
+    case addContact.type: {
       return {
         ...state,
         contacts: {
@@ -17,7 +18,8 @@ export const contactReducer = (state = initialState, action) => {
         },
       };
     }
-    case 'deleteContact': {
+
+    case deleteContact.type: {
       return {
         ...state,
         contacts: {
@@ -27,13 +29,14 @@ export const contactReducer = (state = initialState, action) => {
         },
       };
     }
-    case 'changeFilter': {
+
+    case changeFilter.type: {
       return {
         ...state,
-        // filters: action.payload,
         filters: { name: action.payload },
       };
     }
+
     default:
       return state;
   }

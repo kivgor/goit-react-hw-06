@@ -4,6 +4,7 @@ import * as Yup from 'yup';
 import { ErrorMessage } from 'formik';
 import { useDispatch } from 'react-redux';
 import { customAlphabet } from 'nanoid';
+import { addContact } from '../../redux/actions';
 
 const initialValues = {
   username: '',
@@ -33,7 +34,8 @@ const ContactForm = () => {
       name: values.username,
       number: values.number,
     };
-    dispatch({ type: 'addContact', payload: newContact });
+
+    dispatch(addContact(newContact));
     actions.resetForm();
   };
 
