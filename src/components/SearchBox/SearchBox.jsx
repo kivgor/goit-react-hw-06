@@ -3,7 +3,7 @@ import css from './SearchBox.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 
 const SearchBox = () => {
-  const statusFilter = useSelector(state => state.phonebook.filters.name);
+  const statusFilter = useSelector(state => state.filters.filters.name);
   const dispatch = useDispatch();
 
   const handleSearch = evt => {
