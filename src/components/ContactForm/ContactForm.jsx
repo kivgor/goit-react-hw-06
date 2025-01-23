@@ -4,7 +4,7 @@ import * as Yup from 'yup';
 import { ErrorMessage } from 'formik';
 import { useDispatch } from 'react-redux';
 import { customAlphabet } from 'nanoid';
-import { addContact } from '../../redux/actions';
+import { addContact } from '../../redux/contactsSlice';
 
 const initialValues = {
   username: '',

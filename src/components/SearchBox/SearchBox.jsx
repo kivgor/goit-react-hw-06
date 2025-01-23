@@ -1,4 +1,4 @@
-import { changeFilter } from '../../redux/actions';
+import { changeFilter } from '../../redux/filtersSlice';
 import css from './SearchBox.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 

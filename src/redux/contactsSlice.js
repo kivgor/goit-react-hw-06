@@ -1,5 +1,5 @@
+import { createSlice } from '@reduxjs/toolkit';
 import initPhonebook from '../initialList.json';
-import { addContact, deleteContact } from './actions';
 
 const initialState = {
   contacts: {
@@ -7,18 +7,20 @@ const initialState = {
   },
 };
 
-export const contactReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case addContact.type: {
+const slice = createSlice({
+  name: 'contacts',
+  initialState,
+  reducers: {
+    addContact: (state, action) => {
       return {
         ...state,
         contacts: {
           items: [...state.contacts.items, action.payload],
         },
       };
-    }
+    },
 
-    case deleteContact.type: {
+    deleteContact: (state, action) => {
       return {
         ...state,
         contacts: {
@@ -27,9 +29,8 @@ export const contactReducer = (state = initialState, action) => {
           ),
         },
       };
-    }
-
-    default:
-      return state;
-  }
-};
+    },
+  },
+});
+export const contactReducer = slice.reducer;
+export const { addContact, deleteContact } = slice.actions;
