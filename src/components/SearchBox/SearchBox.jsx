@@ -6,10 +6,6 @@ const SearchBox = () => {
   const statusFilter = useSelector(selectNameFilter);
   const dispatch = useDispatch();
 
-  const handleSearch = evt => {
-    dispatch(changeFilter(evt.target.value));
-  };
-
   return (
     <div className={css.thumb}>
       <label>
@@ -18,7 +14,9 @@ const SearchBox = () => {
           value={statusFilter}
           className={css.input}
           type="text"
-          onChange={handleSearch}
+          onChange={evt => {
+            dispatch(changeFilter(evt.target.value));
+          }}
         />
       </label>
     </div>
