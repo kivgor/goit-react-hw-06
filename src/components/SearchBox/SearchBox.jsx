@@ -8,17 +8,16 @@ const SearchBox = () => {
 
   return (
     <div className={css.thumb}>
-      <label>
-        Find contact by name
-        <input
-          value={statusFilter}
-          className={css.input}
-          type="text"
-          onChange={evt => {
-            dispatch(changeFilter(evt.target.value));
-          }}
-        />
-      </label>
+      <label htmlFor="inputFilter">Find contact by name</label>
+      <input
+        value={statusFilter}
+        id="inputFilter"
+        className={css.input}
+        type="text"
+        onChange={evt => {
+          dispatch(changeFilter(evt.target.value));
+        }}
+      />
     </div>
   );
 };

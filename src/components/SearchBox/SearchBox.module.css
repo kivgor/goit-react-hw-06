@@ -1,7 +1,7 @@
 .thumb {
   display: flex;
   flex-direction: column;
-  width: 400px;
+  max-width: 400px;
 }
 
 .input {
@@ -9,7 +9,4 @@
   border-radius: 5px;
   padding: 10px;
   margin-bottom: 20px;
-  width: 100%;
 }
-
-
